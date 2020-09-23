@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "target": "ES6",
+        "lib": ["ES6", "DOM"],
+        "strictNullChecks": true,
+        "noImplicitAny": false,
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+        "module": "CommonJS",
+        "moduleResolution": "node",
+        "allowJs": false,
+        "experimentalDecorators": true,
+        "noImplicitThis": true,
+        "noImplicitReturns": true,
+        "alwaysStrict": true,
+        "inlineSourceMap": true,
+        "inlineSources": true,
+        "noFallthroughCasesInSwitch": true,
+        "incremental": true,
+        "strict": true,
+        "removeComments": true,
+        "pretty": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "allowSyntheticDefaultImports": true,
+        "strictPropertyInitialization": true,
+
+    },
+    "include": ["./src/**/*.ts", "node_modules/miniprogram-api-typings/index.d.ts"]
+}

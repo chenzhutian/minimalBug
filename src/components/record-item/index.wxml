@@ -1,0 +1,23 @@
+<wxs module="helper" src="../../utils/helper.wxs" />
+
+<v-swipe-cell right-width="{{ 120 }}" left-width="{{ 0 }}">
+  <v-cell custom-class="record {{customClass}}"
+    value-class="amount-value {{(helper.isInternalMoveCategory(item.category)||item.reimbursable)?'transfer':(helper.isINCOME(item.type.id)?'income':'outcome')}}"
+    center clickable size="large" label="{{item.label}}" icon="{{item.category.icon}}" bind:click="onEditRecord"
+    id="{{item._id}}">
+    <view slot="title" class="title">
+      {{item.category.name}}
+      <span wx:if="{{item.reimbursable}}" class="reimburst-label">报</span>
+    </view>
+    {{item.type.id === 'OUTCOME' ? item.outMoney : item.inMoney}}
+    <span wx:if="{{helper.isInternalMoveCategory(item.category)}}" class="amount-label">
+      {{item.transferToAccountLabel}}
+    </span>
+  </v-cell>
+
+  <view slot="right" class="record_buttons">
+    <v-button custom-class="button" color="#95a5a6">迁移</v-button>
+    <v-button custom-class="button" color="#e74c3c" id="{{item._id}}" data-record="{{item}}" bind:click="remove">删除
+    </v-button>
+  </view>
+</v-swipe-cell>

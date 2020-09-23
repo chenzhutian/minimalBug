@@ -1,0 +1,385 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components/record-list-collapse rendering with a record 1`] = `
+<main
+  records="{{
+    MoneyRecordInSection {
+      "_id": "asqwerwq",
+      "category": Object {
+        "icon": "/assets/icons/category/snack_wine.png",
+        "id": 2,
+        "name": "零食烟酒",
+        "order": 2,
+        "outcome": "OUTCOME",
+        "parentId": 1,
+        "type": 2,
+        "type_": "OUTCOME",
+        "visible": true,
+      },
+      "date": 1600452644474,
+      "inFundId": null,
+      "inMoney": null,
+      "inMoneyType": null,
+      "label": "9月19日 ",
+      "note": "",
+      "o": Object {
+        "_id": "asqwerwq",
+        "category": 2,
+        "date": 1600452644474,
+        "inFundId": null,
+        "inMoney": null,
+        "inMoneyType": null,
+        "note": "",
+        "outFundId": "35717f3f-bb57-4f09-8da7-9dbdeda8bdef",
+        "outMoney": 900,
+        "outMoneyType": "CNY",
+        "refunded": false,
+        "reimbursable": false,
+        "source": "MANUAL",
+        "type": "OUTCOME",
+      },
+      "outFundId": "35717f3f-bb57-4f09-8da7-9dbdeda8bdef",
+      "outMoney": 900,
+      "outMoneyType": CURRENCY {
+        "id": "CNY",
+        "name": "¥",
+      },
+      "refunded": false,
+      "reimbursable": false,
+      "source": "MANUAL",
+      "type": MONEY_TYPE {
+        "id": "OUTCOME",
+        "name": "支出",
+      },
+    }
+  }}"
+>
+  <v-swipe-cell>
+    <wx-view
+      class="van-swipe-cell"
+      data-key="cell"
+      catch:tap="onClick"
+      bind:touchcancel="endDrag"
+      bind:touchend="endDrag"
+      catch:touchmove=""
+      bind:touchstart="startDrag"
+    >
+      <wx-view
+        style=""
+      >
+        <v-cell
+          customClass="record "
+          id=""
+          valueClass="amount-value outcome"
+          bind:click="onEditRecord"
+        >
+          <wx-view
+            class="custom-class van-cell van-cell--large van-cell--center van-cell--clickable"
+            hoverClass="van-cell--hover hover-class"
+            hoverStayTime="70"
+            style="{{null}}"
+            bind:tap="onClick"
+          >
+            <wx-view
+              class="van-cell__title title-class"
+              style="null"
+            >
+              <wx-view
+                class="title"
+                slot="title"
+              >
+                
+      
+      
+              </wx-view>
+            </wx-view>
+            <wx-view
+              class="van-cell__value value-class"
+            >
+              
+    
+    
+            </wx-view>
+          </wx-view>
+        </v-cell>
+        <wx-view
+          class="van-swipe-cell__right"
+          data-key="right"
+          catch:tap="onClick"
+        >
+          <wx-view
+            class="record_buttons"
+            slot="right"
+          >
+            <v-button
+              customClass="button"
+            >
+              <wx-button
+                appParameter="{{null}}"
+                ariaLabel="{{null}}"
+                businessId="{{null}}"
+                class="custom-class van-button van-button--default van-button--normal "
+                data-detail="{{null}}"
+                formType="{{null}}"
+                hoverClass="van-button--active hover-class"
+                id="{{null}}"
+                lang="{{null}}"
+                openType="{{null}}"
+                sendMessageImg="{{null}}"
+                sendMessagePath="{{null}}"
+                sendMessageTitle="{{null}}"
+                sessionFrom="{{null}}"
+                showMessageCard="{{null}}"
+                style="color: white;background: #95a5a6;border-color: #95a5a6; null"
+                bind:contact="bindContact"
+                bind:error="bindError"
+                bind:getphonenumber="bindGetPhoneNumber"
+                bind:getuserinfo="bindGetUserInfo"
+                bind:launchapp="bindLaunchApp"
+                bind:opensetting="bindOpenSetting"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="van-button__text"
+                >
+                  迁移
+                </wx-view>
+              </wx-button>
+            </v-button>
+            <v-button
+              customClass="button"
+              data-record="{{Object {}}}"
+              bind:click="remove"
+            >
+              <wx-button
+                appParameter="{{null}}"
+                ariaLabel="{{null}}"
+                businessId="{{null}}"
+                class="custom-class van-button van-button--default van-button--normal "
+                data-detail="{{null}}"
+                formType="{{null}}"
+                hoverClass="van-button--active hover-class"
+                id="{{null}}"
+                lang="{{null}}"
+                openType="{{null}}"
+                sendMessageImg="{{null}}"
+                sendMessagePath="{{null}}"
+                sendMessageTitle="{{null}}"
+                sessionFrom="{{null}}"
+                showMessageCard="{{null}}"
+                style="color: white;background: #e74c3c;border-color: #e74c3c; null"
+                bind:contact="bindContact"
+                bind:error="bindError"
+                bind:getphonenumber="bindGetPhoneNumber"
+                bind:getuserinfo="bindGetUserInfo"
+                bind:launchapp="bindLaunchApp"
+                bind:opensetting="bindOpenSetting"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="van-button__text"
+                >
+                  删除
+    
+                </wx-view>
+              </wx-button>
+            </v-button>
+          </wx-view>
+        </wx-view>
+      </wx-view>
+    </wx-view>
+  </v-swipe-cell>
+</main>
+`;
+
+exports[`components/record-list-collapse should render more for a record with category 87 1`] = `
+<main
+  records="{{
+    MoneyRecordInSection {
+      "_id": "qweqwe",
+      "category": Object {
+        "icon": "/assets/icons/category/refund.png",
+        "id": 87,
+        "name": "退款",
+        "order": 10,
+        "outcome": "INCOME",
+        "parentId": 0,
+        "type": 1,
+        "type_": "INCOME",
+        "visible": true,
+      },
+      "date": 1600452644474,
+      "inFundId": "35717f3f-bb57-4f09-8da7-9dbdeda8bdee",
+      "inMoney": 500,
+      "inMoneyType": CURRENCY {
+        "id": "CNY",
+        "name": "¥",
+      },
+      "label": "9月19日 ",
+      "note": "",
+      "o": Object {
+        "_id": "qweqwe",
+        "category": 87,
+        "date": 1600452644474,
+        "inFundId": "35717f3f-bb57-4f09-8da7-9dbdeda8bdee",
+        "inMoney": 500,
+        "inMoneyType": "CNY",
+        "note": "",
+        "outFundId": null,
+        "outMoney": null,
+        "outMoneyType": null,
+        "refunded": false,
+        "reimbursable": true,
+        "source": "MANUAL",
+        "type": "INCOME",
+      },
+      "outFundId": null,
+      "outMoney": null,
+      "outMoneyType": null,
+      "refunded": false,
+      "reimbursable": true,
+      "source": "MANUAL",
+      "type": MONEY_TYPE {
+        "id": "INCOME",
+        "name": "收入",
+      },
+    }
+  }}"
+>
+  <v-swipe-cell>
+    <wx-view
+      class="van-swipe-cell"
+      data-key="cell"
+      catch:tap="onClick"
+      bind:touchcancel="endDrag"
+      bind:touchend="endDrag"
+      catch:touchmove=""
+      bind:touchstart="startDrag"
+    >
+      <wx-view
+        style=""
+      >
+        <v-cell
+          customClass="record "
+          id=""
+          valueClass="amount-value outcome"
+          bind:click="onEditRecord"
+        >
+          <wx-view
+            class="custom-class van-cell van-cell--large van-cell--center van-cell--clickable"
+            hoverClass="van-cell--hover hover-class"
+            hoverStayTime="70"
+            style="{{null}}"
+            bind:tap="onClick"
+          >
+            <wx-view
+              class="van-cell__title title-class"
+              style="null"
+            >
+              <wx-view
+                class="title"
+                slot="title"
+              >
+                
+      
+      
+              </wx-view>
+            </wx-view>
+            <wx-view
+              class="van-cell__value value-class"
+            >
+              
+    
+    
+            </wx-view>
+          </wx-view>
+        </v-cell>
+        <wx-view
+          class="van-swipe-cell__right"
+          data-key="right"
+          catch:tap="onClick"
+        >
+          <wx-view
+            class="record_buttons"
+            slot="right"
+          >
+            <v-button
+              customClass="button"
+            >
+              <wx-button
+                appParameter="{{null}}"
+                ariaLabel="{{null}}"
+                businessId="{{null}}"
+                class="custom-class van-button van-button--default van-button--normal "
+                data-detail="{{null}}"
+                formType="{{null}}"
+                hoverClass="van-button--active hover-class"
+                id="{{null}}"
+                lang="{{null}}"
+                openType="{{null}}"
+                sendMessageImg="{{null}}"
+                sendMessagePath="{{null}}"
+                sendMessageTitle="{{null}}"
+                sessionFrom="{{null}}"
+                showMessageCard="{{null}}"
+                style="color: white;background: #95a5a6;border-color: #95a5a6; null"
+                bind:contact="bindContact"
+                bind:error="bindError"
+                bind:getphonenumber="bindGetPhoneNumber"
+                bind:getuserinfo="bindGetUserInfo"
+                bind:launchapp="bindLaunchApp"
+                bind:opensetting="bindOpenSetting"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="van-button__text"
+                >
+                  迁移
+                </wx-view>
+              </wx-button>
+            </v-button>
+            <v-button
+              customClass="button"
+              data-record="{{Object {}}}"
+              bind:click="remove"
+            >
+              <wx-button
+                appParameter="{{null}}"
+                ariaLabel="{{null}}"
+                businessId="{{null}}"
+                class="custom-class van-button van-button--default van-button--normal "
+                data-detail="{{null}}"
+                formType="{{null}}"
+                hoverClass="van-button--active hover-class"
+                id="{{null}}"
+                lang="{{null}}"
+                openType="{{null}}"
+                sendMessageImg="{{null}}"
+                sendMessagePath="{{null}}"
+                sendMessageTitle="{{null}}"
+                sessionFrom="{{null}}"
+                showMessageCard="{{null}}"
+                style="color: white;background: #e74c3c;border-color: #e74c3c; null"
+                bind:contact="bindContact"
+                bind:error="bindError"
+                bind:getphonenumber="bindGetPhoneNumber"
+                bind:getuserinfo="bindGetUserInfo"
+                bind:launchapp="bindLaunchApp"
+                bind:opensetting="bindOpenSetting"
+                bind:tap="onClick"
+              >
+                <wx-view
+                  class="van-button__text"
+                >
+                  删除
+    
+                </wx-view>
+              </wx-button>
+            </v-button>
+          </wx-view>
+        </wx-view>
+      </wx-view>
+    </wx-view>
+  </v-swipe-cell>
+</main>
+`;

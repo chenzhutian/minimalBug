@@ -1,0 +1,112 @@
+
+var idxOf = function (array, item) {
+  return array.indexOf(item.toString());
+}
+
+var findById = function(array, id, key) {
+  if(!array || "Array" !== array.constructor) {
+    console.log('In helper.wxs findById, array is not an array', array)
+  }
+
+  var target = null
+  var i = 0,
+    len = array.length
+  for(; i < len; ++i) {
+    var item = array[i]
+    if((key? item[key]:item) === id) {
+      target = array[i]
+      break
+    }
+  }
+  return target
+}
+
+var filterByVal = function(array, expr, key) {
+  if(!array || "Array" !== array.constructor) {
+    console.log('In helper.wxs findById, array is not an array', array)
+  }
+
+  return array.filter(function(d) {
+    return key ? expr(d[key]) : expr(d)
+  })
+}
+
+var CATEGORY_IDs = {
+  TRANSFER_ID: 55555,
+  LEND_ID: 16,
+  BORROW_ID: 82,
+  COLLECTMONEY_ID: 83,
+  PAYDEBT_ID: 17,
+  INVESTLOSS_ID: 15,
+  REIMBURSE_ID: 87
+}
+
+function isXCategory(key, categoryOrId) {
+  return function(categoryOrId) {
+    if(categoryOrId === undefined) {
+      return false
+    }
+  
+    return (typeof categoryOrId === 'number')
+      ? categoryOrId === CATEGORY_IDs[key]
+      : categoryOrId.id === CATEGORY_IDs[key]
+  }
+}
+
+var isTransferCategory = isXCategory('TRANSFER_ID')
+var isLendCategory = isXCategory('LEND_ID')
+var isCollectMoneyCategory = isXCategory('COLLECTMONEY_ID')
+var isBorrowCategory = isXCategory('BORROW_ID')
+var isPayDebtCategory = isXCategory('PAYDEBT_ID')
+var isInvestLoss = isXCategory('INVESTLOSS_ID')
+var isReimburse = isXCategory('REIMBURSE_ID')
+
+/*-------------- Composite --------------- */
+var isLendOrBorrow = function(categoryOrId) {
+  return isLendCategory(categoryOrId)
+    || isCollectMoneyCategory(categoryOrId)
+    || isBorrowCategory(categoryOrId)
+    || isPayDebtCategory(categoryOrId)
+}
+
+var isInternalMoveCategory = function(categoryOrId) {
+  return isTransferCategory(categoryOrId)
+    || isLendOrBorrow(categoryOrId)
+}
+
+var isNotReimbursable = function(categoryOrId) {
+  return isInternalMoveCategory(categoryOrId) || isInvestLoss(categoryOrId)
+}
+
+var isReimbursable = function(categoryOrId) {
+  return !isNotReimbursable(categoryOrId)
+}
+
+var isINCOME = function(type) {
+  return type === 'INCOME'
+}
+var isOUTCOME = function(type) {
+  return type === 'OUTCOME'
+}
+
+module.exports = {
+  // category
+  isTransferCategory: isTransferCategory,
+  isLendCategory: isLendCategory,
+  isCollectMoneyCategory: isCollectMoneyCategory,
+  isBorrowCategory: isBorrowCategory,
+  isPayDebtCategory: isPayDebtCategory,
+  isInvestLoss:isInvestLoss,
+  isReimburse: isReimburse,
+  // composite category
+  isLendOrBorrow: isLendOrBorrow,
+  isInternalMoveCategory: isInternalMoveCategory,
+  isNotReimbursable: isNotReimbursable,
+  isReimbursable:isReimbursable,
+  isINCOME: isINCOME,
+  isOUTCOME: isOUTCOME,
+  // array helper
+  indexOf: idxOf,
+  findById: findById,
+  filterByVal: filterByVal
+}

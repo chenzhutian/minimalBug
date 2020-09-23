@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "styleIsolation": "shared",
+  "usingComponents": {
+    "v-swipe-cell": "../../miniprogram_npm/@vant/weapp/swipe-cell/index",
+    "v-cell": "../..//miniprogram_npm/@vant/weapp/cell/index",
+    "v-button": "../../miniprogram_npm/@vant/weapp/button/index"
+  }
+}
